@@ -98,9 +98,11 @@
       "\n\nPouvez-vous m'envoyer un devis ?";
     var url = WA + "?text=" + encodeURIComponent(message);
 
-    var libelle = bouton.textContent;
+    // Le bouton est un ticket : on change seulement son titre, pas son dessin.
+    var cible = bouton.querySelector(".ticket-titre") || bouton;
+    var libelle = cible.textContent;
     bouton.disabled = true;
-    bouton.textContent = "Ouverture de WhatsApp…";
+    cible.textContent = "Ouverture de WhatsApp…";
 
     var lien = document.createElement("a");
     lien.href = url;
@@ -112,7 +114,7 @@
 
     setTimeout(function () {
       bouton.disabled = false;
-      bouton.textContent = libelle;
+      cible.textContent = libelle;
       etat.textContent = "";
       var p1 = document.createTextNode("Votre bon est prêt dans WhatsApp. Rien ne s'est ouvert ? ");
       var a = document.createElement("a");
