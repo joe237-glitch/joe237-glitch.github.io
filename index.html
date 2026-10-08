@@ -134,6 +134,13 @@ p { margin: 0; }
 .hero .ticker b { color: var(--ink); font-weight: 500; }
 @media (max-width: 800px) { .hero .grid { grid-template-columns: 1fr; align-items: start; } .facts { padding-left: 16px; } }
 
+/* Chiffres clés (section projets) */
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: clamp(24px, 4vw, 40px); }
+.stats div { border-top: 2px solid var(--accent); padding-top: 10px; }
+.stats b { display: block; font-family: var(--font-display); font-size: clamp(28px, 3.4vw, 40px); font-weight: 800; line-height: 1; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.stats span { display: block; color: var(--ink-2); font-size: 14px; margin-top: 6px; }
+@media (max-width: 640px) { .stats { grid-template-columns: 1fr 1fr; } }
+
 /* Sections */
 section { padding-block: clamp(40px, 7vw, 80px); }
 section + section { border-top: 1px solid var(--line); }
@@ -202,7 +209,7 @@ section + section { border-top: 1px solid var(--line); }
 @media (max-width: 640px) { .list { grid-template-columns: 1fr; } }
 
 /* Compétences */
-.cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 24px; }
 .cols h3 { font-size: 15px; font-family: var(--font-mono); font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 12px; }
 .cols ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
 .cols li { padding-left: 14px; position: relative; }
@@ -211,7 +218,8 @@ section + section { border-top: 1px solid var(--line); }
 @media (max-width: 480px) { .cols { grid-template-columns: 1fr; } }
 
 /* Services */
-.services { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+@media (max-width: 860px) { .services { grid-template-columns: 1fr 1fr; } }
 .service { border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; background: var(--bg-2); display: grid; gap: 8px; }
 .service h3 { font-size: 19px; font-weight: 700; }
 .service p { color: var(--ink-2); font-size: 15px; }
@@ -288,8 +296,8 @@ footer { padding-block: 28px 44px; color: var(--ink-2); font-size: 14px; display
           <span class="en">Websites, shops and bots <em>in production</em>, from idea to server.</span>
         </h1>
         <p class="lead">
-          <span class="fr">Je conçois, développe et mets en ligne des applications web complètes : Next.js, React, TypeScript, Python. Paiement Mobile Money et carte bancaire, sites multilingues, référencement, hébergement sur serveur Linux.</span>
-          <span class="en">I design, build and ship complete web applications: Next.js, React, TypeScript, Python. Mobile Money and card payments, multilingual sites, SEO, Linux server hosting.</span>
+          <span class="fr">Je conçois, développe et mets en ligne des applications web, des logiciels, des applications mobiles et des bots : Next.js, React, React Native, TypeScript, Python. Paiement Mobile Money et carte bancaire, sites multilingues, référencement, hébergement sur serveur Linux.</span>
+          <span class="en">I design, build and ship web applications, software, mobile apps and bots: Next.js, React, React Native, TypeScript, Python. Mobile Money and card payments, multilingual sites, SEO, Linux server hosting.</span>
         </p>
         <div class="cta">
           <a class="btn primary" href="#projets"><span class="fr">Voir les projets</span><span class="en">See the projects</span></a>
@@ -315,6 +323,13 @@ footer { padding-block: 28px 44px; color: var(--ink-2); font-size: 14px; display
       <div class="head">
         <h2><span class="fr">Projets en production</span><span class="en">Projects in production</span></h2>
         <p><span class="fr">Des applications réelles, avec de vrais utilisateurs et de vrais paiements. Conception, code, mise en ligne et maintenance.</span><span class="en">Real applications with real users and real payments. Design, code, release and maintenance.</span></p>
+      </div>
+
+      <div class="stats" aria-label="Chiffres clés">
+        <div><b>15</b><span><span class="fr">projets conçus et codés</span><span class="en">projects designed and built</span></span></div>
+        <div><b>4</b><span><span class="fr">applications en production</span><span class="en">applications in production</span></span></div>
+        <div><b>13</b><span><span class="fr">langues sur un même site</span><span class="en">languages on one site</span></span></div>
+        <div><b>5</b><span><span class="fr">prestataires de paiement intégrés</span><span class="en">payment providers integrated</span></span></div>
       </div>
 
       <article class="feature">
@@ -358,16 +373,16 @@ footer { padding-block: 28px 44px; color: var(--ink-2); font-size: 14px; display
 
         <article class="card">
           <div class="mock" aria-hidden="true">
-            <div class="msg in">📦 Créer un colis</div>
-            <div class="msg out">Colis créé · Istanbul → Douala · itinéraire généré</div>
-            <div class="msg in">➡️ Étape suivante</div>
-            <div class="msg out">Arrivé au hub de tri · SMS envoyé au client</div>
+            <div class="msg in">🔑 Code reçu : ••••••</div>
+            <div class="msg out">Code vérifié · message effacé du chat</div>
+            <div class="msg in">📄 Ma facture</div>
+            <div class="msg out">Facture n° 0042 générée en PDF · envoyée ✓</div>
           </div>
           <div class="body">
-            <h3>Parcels Flow · SAPE OUTLET</h3>
-            <p class="role"><span class="fr">Deux bots Telegram pour une activité de livraison · 2026</span><span class="en">Two Telegram bots for a delivery business · 2026</span></p>
-            <p><span class="fr">Côté admin : création et suivi des colis, étapes, incidents, e-mails et SMS aux clients, tableau de bord. Côté client : suivi du colis et facture PDF générée à la demande. Relié à l'API du site de suivi.</span><span class="en">Admin side: parcel creation and tracking, steps, incidents, customer emails and SMS, dashboard. Customer side: parcel tracking and on-demand PDF invoices. Connected to the tracking site's API.</span></p>
-            <ul class="chips"><li>Python</li><li>Telegram Bot API</li><li>SQLite</li><li>AWS SNS</li><li>ReportLab</li><li>systemd</li></ul>
+            <h3><span class="fr">Bots Telegram sur mesure</span><span class="en">Custom Telegram bots</span></h3>
+            <p class="role"><span class="fr">Deux bots en production, côté équipe et côté clients · 2026</span><span class="en">Two bots in production, one for the team and one for customers · 2026</span></p>
+            <p><span class="fr">Parcours guidés par boutons, étapes et statuts, génération de factures PDF, envoi de SMS et d'e-mails, codes d'accès à usage unique, mots de passe effacés du chat après saisie, tableau de bord et gestion des administrateurs. Reliés à une API et à une base de données, lancés comme services système sur un serveur Linux.</span><span class="en">Button-driven flows, steps and statuses, PDF invoice generation, SMS and email sending, single-use access codes, passwords wiped from the chat after entry, dashboard and admin management. Connected to an API and a database, run as system services on a Linux server.</span></p>
+            <ul class="chips"><li>Python</li><li>Telegram Bot API</li><li>SQLite</li><li>AWS SNS</li><li>ReportLab</li><li>SMTP</li><li>systemd</li></ul>
           </div>
         </article>
 
@@ -461,20 +476,71 @@ footer { padding-block: 28px 44px; color: var(--ink-2); font-size: 14px; display
       </div>
       <div class="cols">
         <div>
-          <h3>Front</h3>
-          <ul><li>React 19</li><li>Next.js (App Router)</li><li>TypeScript</li><li>Tailwind CSS</li><li><span class="fr">Sites multilingues (i18n)</span><span class="en">Multilingual sites (i18n)</span></li><li><span class="fr">Accessibilité, mobile d'abord</span><span class="en">Accessibility, mobile first</span></li></ul>
+          <h3><span class="fr">Interfaces</span><span class="en">Front end</span></h3>
+          <ul>
+            <li>React 18 / 19 · Next.js (App Router)</li>
+            <li>TypeScript · Tailwind CSS</li>
+            <li>React Native · Expo</li>
+            <li><span class="fr">3D : Three.js</span><span class="en">3D: Three.js</span></li>
+            <li><span class="fr">Vidéo programmée : Remotion</span><span class="en">Programmatic video: Remotion</span></li>
+            <li><span class="fr">Sites multilingues, devise selon le pays, mode clair / sombre</span><span class="en">Multilingual sites, currency by country, light / dark mode</span></li>
+            <li><span class="fr">Accessibilité, mobile d'abord, pages rapides</span><span class="en">Accessibility, mobile first, fast pages</span></li>
+          </ul>
         </div>
         <div>
-          <h3>Back</h3>
-          <ul><li>Node.js</li><li>Python</li><li>Prisma · PostgreSQL · SQLite</li><li><span class="fr">API REST, webhooks signés</span><span class="en">REST APIs, signed webhooks</span></li><li><span class="fr">Paiements : Mobile Money, cartes, crypto</span><span class="en">Payments: Mobile Money, cards, crypto</span></li><li>Supabase</li></ul>
+          <h3><span class="fr">Serveur & données</span><span class="en">Back end & data</span></h3>
+          <ul>
+            <li>Node.js · NestJS · Express</li>
+            <li>Python · FastAPI · Django (API)</li>
+            <li>PostgreSQL · SQLite · Redis</li>
+            <li>Prisma · Supabase · Neon</li>
+            <li><span class="fr">API REST, webhooks signés, authentification, rôles et permissions, double authentification</span><span class="en">REST APIs, signed webhooks, authentication, roles and permissions, two-factor login</span></li>
+            <li><span class="fr">Monorepo pnpm · Turbo · Docker</span><span class="en">pnpm monorepo · Turbo · Docker</span></li>
+            <li><span class="fr">Contrats Solidity (Hardhat), paiements USDC</span><span class="en">Solidity contracts (Hardhat), USDC payments</span></li>
+          </ul>
         </div>
         <div>
-          <h3>Ops</h3>
-          <ul><li>Ubuntu, Nginx, systemd</li><li><span class="fr">VPS, Vercel</span><span class="en">VPS, Vercel</span></li><li><span class="fr">Déploiement scripté, retour arrière</span><span class="en">Scripted deploys, rollback</span></li><li>Git, GitHub</li><li><span class="fr">Sauvegardes, surveillance</span><span class="en">Backups, monitoring</span></li></ul>
+          <h3><span class="fr">Paiements & intégrations</span><span class="en">Payments & integrations</span></h3>
+          <ul>
+            <li><span class="fr">Mobile Money : Orange Money, MTN MoMo, Wave, et autres par pays</span><span class="en">Mobile Money: Orange Money, MTN MoMo, Wave, and more by country</span></li>
+            <li>SasPay · GeniusPay · PawaPay · Soleas Pay · NotchPay · Stripe</li>
+            <li><span class="fr">Vérification côté serveur avant tout crédit, livraison automatique</span><span class="en">Server-side verification before any credit, automatic delivery</span></li>
+            <li><span class="fr">Bots Telegram, SMS (AWS SNS), e-mails (SMTP, Resend, Brevo)</span><span class="en">Telegram bots, SMS (AWS SNS), email (SMTP, Resend, Brevo)</span></li>
+            <li><span class="fr">Génération de PDF (factures, ebooks), export Excel</span><span class="en">PDF generation (invoices, ebooks), Excel export</span></li>
+            <li><span class="fr">Données sportives en direct (API-Sports), 12 sports</span><span class="en">Live sports data (API-Sports), 12 sports</span></li>
+          </ul>
         </div>
         <div>
-          <h3><span class="fr">Visibilité & contenu</span><span class="en">Visibility & content</span></h3>
-          <ul><li><span class="fr">SEO technique : Search Console, données structurées, sitemaps</span><span class="en">Technical SEO: Search Console, structured data, sitemaps</span></li><li><span class="fr">Bots Telegram</span><span class="en">Telegram bots</span></li><li>Photoshop, Premiere Pro</li><li><span class="fr">Visuels, montage vidéo</span><span class="en">Visuals, video editing</span></li></ul>
+          <h3><span class="fr">Mise en ligne & exploitation</span><span class="en">Release & operations</span></h3>
+          <ul>
+            <li>Ubuntu · Nginx · systemd · HTTPS</li>
+            <li><span class="fr">VPS Hostinger, Vercel, Render</span><span class="en">Hostinger VPS, Vercel, Render</span></li>
+            <li><span class="fr">Déploiement scripté avec retour arrière, sauvegardes, surveillance</span><span class="en">Scripted deploys with rollback, backups, monitoring</span></li>
+            <li><span class="fr">Git · GitHub · intégration continue (GitHub Actions)</span><span class="en">Git · GitHub · continuous integration (GitHub Actions)</span></li>
+            <li><span class="fr">Tâches planifiées, files de traitement, limites d'appels API</span><span class="en">Scheduled jobs, processing queues, API rate limits</span></li>
+            <li><span class="fr">Sécurité : secrets chiffrés, 1 appareil par compte, journal d'audit</span><span class="en">Security: encrypted secrets, one device per account, audit log</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3><span class="fr">Qualité & méthode</span><span class="en">Quality & method</span></h3>
+          <ul>
+            <li><span class="fr">Tests : Vitest, Playwright (bout en bout), tests d'intégration</span><span class="en">Testing: Vitest, Playwright (end to end), integration tests</span></li>
+            <li><span class="fr">Cahiers des charges, plans de sprint, feuilles de route</span><span class="en">Specifications, sprint plans, roadmaps</span></li>
+            <li><span class="fr">Revue d'écrans avec les parties prenantes avant de coder</span><span class="en">Screen reviews with stakeholders before coding</span></li>
+            <li><span class="fr">SEO technique : Search Console, données structurées, sitemaps, IndexNow</span><span class="en">Technical SEO: Search Console, structured data, sitemaps, IndexNow</span></li>
+            <li><span class="fr">Mesure d'audience et filtrage des robots</span><span class="en">Audience measurement and bot filtering</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3><span class="fr">Création & business</span><span class="en">Creative & business</span></h3>
+          <ul>
+            <li><span class="fr">Photoshop, Premiere Pro : visuels, flyers, montage vidéo</span><span class="en">Photoshop, Premiere Pro: visuals, flyers, video editing</span></li>
+            <li><span class="fr">Marketing digital, réseaux sociaux, animation de communautés</span><span class="en">Digital marketing, social media, community management</span></li>
+            <li><span class="fr">Boutiques numériques : catalogue, prix, packs, promotions</span><span class="en">Digital shops: catalogue, pricing, bundles, promotions</span></li>
+            <li><span class="fr">Analyse des marchés financiers, gestion du risque (MetaTrader)</span><span class="en">Financial market analysis, risk management (MetaTrader)</span></li>
+            <li><span class="fr">Précommandes et logistique internationale</span><span class="en">Pre-orders and international logistics</span></li>
+            <li><span class="fr">Français courant · Anglais courant</span><span class="en">French (fluent) · English (fluent)</span></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -496,8 +562,16 @@ footer { padding-block: 28px 44px; color: var(--ink-2); font-size: 14px; display
           <p><span class="fr">Produits numériques ou abonnements, Mobile Money et carte bancaire, livraison automatique, suivi des commandes.</span><span class="en">Digital goods or subscriptions, Mobile Money and card payments, automatic delivery, order tracking.</span></p>
         </div>
         <div class="service">
+          <h3><span class="fr">Logiciel sur mesure</span><span class="en">Custom software</span></h3>
+          <p><span class="fr">Un logiciel qui tourne sur votre PC ou votre serveur pour automatiser une tâche répétitive : traitement de fichiers, génération de documents, publication automatique, outil interne avec son interface.</span><span class="en">Software running on your PC or server to automate a repetitive task: file processing, document generation, automatic publishing, an internal tool with its own interface.</span></p>
+        </div>
+        <div class="service">
+          <h3><span class="fr">Application mobile</span><span class="en">Mobile app</span></h3>
+          <p><span class="fr">Application Android et iOS avec React Native, connectée à votre back-office, avec comptes, paiement et notifications.</span><span class="en">Android and iOS app with React Native, connected to your back office, with accounts, payments and notifications.</span></p>
+        </div>
+        <div class="service">
           <h3><span class="fr">Bot Telegram</span><span class="en">Telegram bot</span></h3>
-          <p><span class="fr">Suivi de commandes, factures PDF, notifications SMS ou e-mail, relié à votre site ou à votre base de données.</span><span class="en">Order tracking, PDF invoices, SMS or email notifications, connected to your site or database.</span></p>
+          <p><span class="fr">Suivi de commandes, factures PDF, notifications SMS ou e-mail, codes d'accès, relié à votre site ou à votre base de données.</span><span class="en">Order tracking, PDF invoices, SMS or email notifications, access codes, connected to your site or database.</span></p>
         </div>
         <div class="service">
           <h3><span class="fr">Mise en ligne et suivi</span><span class="en">Release and upkeep</span></h3>
